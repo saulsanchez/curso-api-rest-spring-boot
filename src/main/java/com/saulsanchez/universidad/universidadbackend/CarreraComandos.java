@@ -47,7 +47,7 @@ public class CarreraComandos implements CommandLineRunner {
         /*List<Carrera> carrerasPorAnio = (List<Carrera>) servicio.findCarrerasByCantidadAniosAfter(3);
         carrerasPorAnio.forEach(System.out::println);*/
 
-        List<Carrera> carreras = (List<Carrera>) servicio.buscarCarrerasPorProfesorNombreYApellido("Don Juan", "Martín");
-        carreras.forEach(carrera -> System.out.println(carrera.toString()));
+        /*List<Carrera> carreras = (List<Carrera>) servicio.buscarCarrerasPorProfesorNombreYApellido("Don Juan", "Martín");
+        carreras.forEach(carrera -> System.out.println(carrera.toString()));*/
     }
 }
