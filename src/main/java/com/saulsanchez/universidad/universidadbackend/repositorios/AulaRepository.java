@@ -13,4 +13,7 @@ public interface AulaRepository extends CrudRepository<Aula, Integer> {
 
     @Query("select a from Aula a where a.pizarron = ?1")
     Iterable<Aula> buscarAulaPorTipoPizarron(Pizarron pizarron);
+
+    @Query("select a from Aula a join fetch a.pabellon p where p.nombre = ?1")
+    Iterable<Aula> buscarAulaPorPabellon(String pabellon);
 }

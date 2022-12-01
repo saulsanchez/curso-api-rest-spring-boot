@@ -1,12 +1,9 @@
 package com.saulsanchez.universidad.universidadbackend;
 
 import com.saulsanchez.universidad.universidadbackend.modelo.entidades.Aula;
-import com.saulsanchez.universidad.universidadbackend.modelo.entidades.enumeradores.Pizarron;
 import com.saulsanchez.universidad.universidadbackend.servicios.contratos.AulaDAO;
-import com.saulsanchez.universidad.universidadbackend.servicios.contratos.CarreraDAO;
-import com.saulsanchez.universidad.universidadbackend.servicios.contratos.PersonaDAO;
+import com.saulsanchez.universidad.universidadbackend.servicios.contratos.PabellonDAO;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Component;
 
@@ -15,6 +12,8 @@ public class AulasCommand implements CommandLineRunner {
 
     @Autowired
     private AulaDAO aulaDAO;
+    @Autowired
+    private PabellonDAO pabellonDAO;
 
     @Override
     public void run(String... args) throws Exception {
@@ -33,5 +32,36 @@ public class AulasCommand implements CommandLineRunner {
 
         /*Iterable<Aula> aulas = aulaDAO.buscarAulaPorTipoPizarron(Pizarron.PIZARRA_BLANCA);
         aulas.forEach(System.out::println);*/
+
+        /*Direccion direccionFernandoAlonso = new Direccion("San Pascual", "12", "03658", "2", "2", "Lanzarote");
+        Pabellon pabellonFernandoAlonso = new Pabellon(null, 200d, "Fernando Alonso", direccionFernandoAlonso);
+
+        Direccion direccionRafaelNadal = new Direccion("Maracaná", "45", "65587", "2", "1", "Madrid");
+        Pabellon pabellonRafaelNadal = new Pabellon(null, 200d, "Rafael Nadal", direccionRafaelNadal);
+
+        pabellonDAO.save(pabellonFernandoAlonso);
+        pabellonDAO.save(pabellonRafaelNadal);*/
+
+        /*Optional<Pabellon> pabellonRafaelNadal = pabellonDAO.findById(1);
+        Optional<Pabellon> pabellonFernandoAlonso = pabellonDAO.findById(2);
+        Iterable<Aula> aulas = aulaDAO.findAll();
+
+        aulas.forEach(aula -> {
+            if (aula.getId() % 2 == 0) {
+                aula.setPabellon(pabellonRafaelNadal.get());
+            } else {
+                aula.setPabellon(pabellonFernandoAlonso.get());
+            }
+            aulaDAO.save(aula);
+        });*/
+
+        Iterable<Aula> aulasRafaelNadal = aulaDAO.buscarAulasPorPabellon("Rafael Nadal");
+        System.out.println("Aulas del pabellón Rafael Nadal");
+        aulasRafaelNadal.forEach(System.out::println);
+
+        Iterable<Aula> aulasFernandoAlonso = aulaDAO.buscarAulasPorPabellon("Fernando Alonso");
+        System.out.println("Aulas del pabellón Fernando Alonso");
+        aulasFernandoAlonso.forEach(System.out::println);
+
     }
 }

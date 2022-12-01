@@ -20,4 +20,9 @@ public class AulaDAOImpl extends GenericoDAOImpl<Aula, AulaRepository> implement
     public Iterable<Aula> buscarAulaPorTipoPizarron(Pizarron pizarron) {
         return repository.buscarAulaPorTipoPizarron(pizarron);
     }
+
+    @Override
+    public Iterable<Aula> buscarAulasPorPabellon(String pabellon) {
+        return repository.buscarAulaPorPabellon(pabellon);
+    }
 }

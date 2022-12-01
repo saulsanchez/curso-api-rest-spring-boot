@@ -6,4 +6,6 @@ import com.saulsanchez.universidad.universidadbackend.modelo.entidades.enumerado
 public interface AulaDAO extends GenericoDAO<Aula> {
 
     Iterable<Aula> buscarAulaPorTipoPizarron(Pizarron pizarron);
+
+    Iterable<Aula> buscarAulasPorPabellon(String pabellon);
 }
