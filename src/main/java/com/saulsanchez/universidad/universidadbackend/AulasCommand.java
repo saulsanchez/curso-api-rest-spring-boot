@@ -65,7 +65,7 @@ public class AulasCommand implements CommandLineRunner {
         System.out.println("Aulas del pabellón Fernando Alonso");
         aulasFernandoAlonso.forEach(System.out::println);*/
 
-        Optional<Aula> aula = aulaDAO.buscarAulaPorNumero(3);
-        System.out.println(aula.toString());
+        /*Optional<Aula> aula = aulaDAO.buscarAulaPorNumero(3);
+        System.out.println(aula.toString());*/
     }
 }
