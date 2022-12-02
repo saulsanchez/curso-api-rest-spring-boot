@@ -20,7 +20,7 @@ public class Empleado extends Persona {
     )
     @JoinColumn(
             name = "pabellon_id",
-            foreignKey = @ForeignKey(name = "FK_PABELLON_ID")
+            foreignKey = @ForeignKey(name = "FK_PABELLON_EMPLEADO_ID")
     )
     private Pabellon pabellon;
 
