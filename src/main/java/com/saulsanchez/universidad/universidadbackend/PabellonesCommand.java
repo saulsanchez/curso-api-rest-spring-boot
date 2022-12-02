@@ -1,15 +1,10 @@
 package com.saulsanchez.universidad.universidadbackend;
 
-import com.saulsanchez.universidad.universidadbackend.modelo.entidades.Aula;
-import com.saulsanchez.universidad.universidadbackend.modelo.entidades.Direccion;
 import com.saulsanchez.universidad.universidadbackend.modelo.entidades.Pabellon;
-import com.saulsanchez.universidad.universidadbackend.servicios.contratos.AulaDAO;
 import com.saulsanchez.universidad.universidadbackend.servicios.contratos.PabellonDAO;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Component;
-
-import java.util.Optional;
 
 @Component
 public class PabellonesCommand implements CommandLineRunner {
@@ -25,7 +20,10 @@ public class PabellonesCommand implements CommandLineRunner {
 
         pabellonDAO.save(pabellonIkerCasillas);*/
 
-        Iterable<Pabellon> pabellones = pabellonDAO.buscarPabellonesPorLocalidad("Madrid");
+        /*Iterable<Pabellon> pabellones = pabellonDAO.buscarPabellonesPorLocalidad("Madrid");
+        pabellones.forEach(System.out::println);*/
+
+        Iterable<Pabellon> pabellones = pabellonDAO.buscarPabellonesPorNombre("K");
         pabellones.forEach(System.out::println);
 
     }

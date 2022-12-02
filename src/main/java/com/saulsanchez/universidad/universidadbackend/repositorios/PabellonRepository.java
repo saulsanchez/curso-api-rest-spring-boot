@@ -12,4 +12,6 @@ public interface PabellonRepository extends CrudRepository<Pabellon, Integer> {
 
     @Query("select p from Pabellon p where p.direccion.localidad = ?1")
     Iterable<Pabellon> buscarPabellonesPorLocalidad(String localidad);
+    @Query("select p from Pabellon p where LOWER(p.nombre) like LOWER(concat('%', ?1, '%'))")
+    Iterable<Pabellon> buscarPabellonesPorNombre(String nombre);
 }
