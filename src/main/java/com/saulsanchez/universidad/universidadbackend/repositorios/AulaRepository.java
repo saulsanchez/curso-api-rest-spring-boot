@@ -7,6 +7,8 @@ import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.stereotype.Repository;
 
+import java.util.Optional;
+
 @Repository
 @Qualifier("repositorioAulas")
 public interface AulaRepository extends CrudRepository<Aula, Integer> {
@@ -16,4 +18,7 @@ public interface AulaRepository extends CrudRepository<Aula, Integer> {
 
     @Query("select a from Aula a join fetch a.pabellon p where p.nombre = ?1")
     Iterable<Aula> buscarAulaPorPabellon(String pabellon);
+
+    @Query("select a from Aula a where a.nroAula = ?1")
+    Optional<Aula> buscarAulaPorNumero(Integer numAula);
 }

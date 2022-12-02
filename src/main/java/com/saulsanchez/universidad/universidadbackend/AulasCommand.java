@@ -7,6 +7,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Component;
 
+import java.util.Optional;
+
 @Component
 public class AulasCommand implements CommandLineRunner {
 
@@ -55,13 +57,15 @@ public class AulasCommand implements CommandLineRunner {
             aulaDAO.save(aula);
         });*/
 
-        Iterable<Aula> aulasRafaelNadal = aulaDAO.buscarAulasPorPabellon("Rafael Nadal");
+        /*Iterable<Aula> aulasRafaelNadal = aulaDAO.buscarAulasPorPabellon("Rafael Nadal");
         System.out.println("Aulas del pabellón Rafael Nadal");
         aulasRafaelNadal.forEach(System.out::println);
 
         Iterable<Aula> aulasFernandoAlonso = aulaDAO.buscarAulasPorPabellon("Fernando Alonso");
         System.out.println("Aulas del pabellón Fernando Alonso");
-        aulasFernandoAlonso.forEach(System.out::println);
+        aulasFernandoAlonso.forEach(System.out::println);*/
 
+        Optional<Aula> aula = aulaDAO.buscarAulaPorNumero(3);
+        System.out.println(aula.toString());
     }
 }

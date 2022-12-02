@@ -8,6 +8,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Service;
 
+import java.util.Optional;
+
 @Service
 public class AulaDAOImpl extends GenericoDAOImpl<Aula, AulaRepository> implements AulaDAO {
 
@@ -24,5 +26,10 @@ public class AulaDAOImpl extends GenericoDAOImpl<Aula, AulaRepository> implement
     @Override
     public Iterable<Aula> buscarAulasPorPabellon(String pabellon) {
         return repository.buscarAulaPorPabellon(pabellon);
+    }
+
+    @Override
+    public Optional<Aula> buscarAulaPorNumero(Integer numAula) {
+        return repository.buscarAulaPorNumero(numAula);
     }
 }
