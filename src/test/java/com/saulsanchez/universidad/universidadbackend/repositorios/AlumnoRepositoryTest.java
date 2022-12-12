@@ -34,7 +34,7 @@ class AlumnoRepositoryTest {
                         alumno03())
         );
 
-        Carrera save = carreraRepository.save(carrera01());
+        Carrera save = carreraRepository.save(carrera01(false));
 
         personas.forEach(alumno -> ((Alumno)alumno).setCarrera(save));
 
@@ -58,7 +58,7 @@ class AlumnoRepositoryTest {
                         alumno03())
         );
 
-        Carrera save = carreraRepository.save(carrera01());
+        Carrera save = carreraRepository.save(carrera01(false));
 
         personas.forEach(alumno -> ((Alumno)alumno).setCarrera(save));
 

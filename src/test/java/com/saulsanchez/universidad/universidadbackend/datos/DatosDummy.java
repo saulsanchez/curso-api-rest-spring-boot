@@ -7,16 +7,18 @@ import java.math.BigDecimal;
 
 public class DatosDummy {
 
-    public static Carrera carrera01() {
-        return new Carrera(null, "Ingeniería en Sistemas", 50, 5);
+    public static Carrera carrera01(boolean conId) {
+        return (conId) ? new Carrera(1, "Ingeniería en Sistemas", 50, 5) :
+                new Carrera(null, "Ingeniería en Sistemas", 50, 5);
     }
 
     public static Carrera carrera02() {
         return new Carrera(null, "Licenciatura en Sistemas", 45, 4);
     }
 
-    public static Carrera carrera03() {
-        return new Carrera(null, "Ingeniería Industrial", 60, 5);
+    public static Carrera carrera03(boolean conId) {
+        return (conId) ? new Carrera(3, "Ingeniería Industrial", 60, 5) :
+            new Carrera(null, "Ingeniería Industrial", 60, 5);
     }
 
     public static Persona empleado01() {
