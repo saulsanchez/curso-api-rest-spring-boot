@@ -16,7 +16,7 @@ class UniversidadBackendApplicationTests {
 	void sumaDeValores() {
 		//given
 		int valorA = 3;
-		int valorB = 3;
+		int valorB = 2;
 
 		//when
 		int expectativa = calculadora.sumar(valorA, valorB);
